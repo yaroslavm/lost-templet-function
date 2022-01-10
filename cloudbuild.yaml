@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args:
+      - gcloud
+      - functions
+      - deploy
+      - template-processor
+      - --entry-point=functions.TemplateProcessor
+      - --region=europe-west3
+      - --source=.
+      - --trigger-topic=document.requested
+      - --runtime=java11
+      - --memory=256MB
+      - --set-env-vars=BUCKET=$_BUCKET,RESULT_FOLDER=$_RESULT_FOLDER,TEMPLATE_FOLDER=$_TEMPLATE_FOLDER
