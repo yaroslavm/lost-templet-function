@@ -4,7 +4,7 @@ steps:
       - gcloud
       - functions
       - deploy
-      - template-processor
+      - lost-templet-function
       - --entry-point=functions.TemplateProcessor
       - --region=europe-west3
       - --source=.
