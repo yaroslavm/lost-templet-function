@@ -12,6 +12,8 @@
         <maven.compiler.source>11</maven.compiler.source>
         <jaxb.version>2.3.3</jaxb.version>
         <spotless.version>2.18.0</spotless.version>
+        <logback.version>1.2.10</logback.version>
+        <logstash.logback.version>7.0.1</logstash.logback.version>
     </properties>
 
     <dependencyManagement>
@@ -19,7 +21,7 @@
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>libraries-bom</artifactId>
-                <version>22.0.0</version>
+                <version>24.3.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -30,7 +32,7 @@
         <dependency>
             <groupId>com.google.cloud.functions</groupId>
             <artifactId>functions-framework-api</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.4</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -56,7 +58,12 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.10</version>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash.logback.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -72,17 +79,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <!-- Required for Java 11 functions in the inline editor -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <excludes>
-                        <exclude>.google/</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
