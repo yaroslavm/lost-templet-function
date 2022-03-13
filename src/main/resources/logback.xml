@@ -6,9 +6,7 @@
             <fieldNames>
                 <timestamp>[ignore]</timestamp>
                 <version>[ignore]</version>
-                <logger>[ignore]</logger>
                 <thread>[ignore]</thread>
-                <level>[ignore]</level>
                 <levelValue>[ignore]</levelValue>
             </fieldNames>
         </encoder>
