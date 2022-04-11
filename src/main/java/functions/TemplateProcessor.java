@@ -51,7 +51,7 @@ public class TemplateProcessor implements BackgroundFunction<PubSubMessage> {
     final var targetFile =
         resultFolder
             + MoreObjects.firstNonNull(
-                MoreObjects.firstNonNull(request.targetFile, attributes.get("templateFile")),
+                MoreObjects.firstNonNull(request.targetFile, attributes.get("targetFile")),
                 "new_file_" + System.currentTimeMillis() + ".docx");
 
     final var storage = StorageOptions.getDefaultInstance().getService();
