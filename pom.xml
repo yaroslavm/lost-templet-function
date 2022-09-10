@@ -14,7 +14,7 @@
         <docx4j.version>11.4.8</docx4j.version>
         <gcp.libraries.bom.version>26.1.1</gcp.libraries.bom.version>
         <gcp.functions.api.version>1.0.4</gcp.functions.api.version>
-        <jaxb.version>2.3.3</jaxb.version>
+        <jaxb.version>4.0.0</jaxb.version>
         <spotless.version>2.18.0</spotless.version>
         <logback.version>1.2.10</logback.version>
         <logstash.logback.version>7.2</logstash.logback.version>
