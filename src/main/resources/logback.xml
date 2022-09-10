@@ -8,6 +8,7 @@
                 <version>[ignore]</version>
                 <thread>[ignore]</thread>
                 <levelValue>[ignore]</levelValue>
+                <level>severity</level>
             </fieldNames>
         </encoder>
     </appender>

@@ -10,10 +10,16 @@
     <properties>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
+        <!-- Libraries versions -->
+        <docx4j.version>11.4.8</docx4j.version>
+        <gcp.libraries.bom.version>26.1.1</gcp.libraries.bom.version>
+        <gcp.functions.api.version>1.0.4</gcp.functions.api.version>
         <jaxb.version>2.3.3</jaxb.version>
         <spotless.version>2.18.0</spotless.version>
         <logback.version>1.2.10</logback.version>
-        <logstash.logback.version>7.0.1</logstash.logback.version>
+        <logstash.logback.version>7.2</logstash.logback.version>
+        <lombok.version>1.18.22</lombok.version>
+        <slf4j.version>1.7.33</slf4j.version>
     </properties>
 
     <dependencyManagement>
@@ -21,7 +27,7 @@
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>libraries-bom</artifactId>
-                <version>24.3.0</version>
+                <version>${gcp.libraries.bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -32,7 +38,7 @@
         <dependency>
             <groupId>com.google.cloud.functions</groupId>
             <artifactId>functions-framework-api</artifactId>
-            <version>1.0.4</version>
+            <version>${gcp.functions.api.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -42,7 +48,7 @@
         <dependency>
             <groupId>org.docx4j</groupId>
             <artifactId>docx4j-JAXB-ReferenceImpl</artifactId>
-            <version>11.3.2</version>
+            <version>${docx4j.version}</version>
         </dependency>
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
@@ -68,12 +74,12 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.32</version>
+            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
 
@@ -85,7 +91,9 @@
                 <version>${spotless.version}</version>
                 <configuration>
                     <java>
-                        <googleJavaFormat/>
+                        <googleJavaFormat>
+                            <version>1.7</version>
+                        </googleJavaFormat>
                     </java>
                 </configuration>
             </plugin>
